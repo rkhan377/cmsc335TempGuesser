@@ -1,12 +1,10 @@
-let portNumber;
+let portNumber=8000;
 
 
 process.stdin.setEncoding("utf8");
-if (process.argv.length != 3) {
-  process.stdout.write(`Usage node summerCampServer.js PORT_NUMBER_HERE`);
+if (process.argv.length != 2) {
+  process.stdout.write(`Usage node summerCampServer.js`);
   process.exit(1);
-} else {
-    portNumber = process.argv[2];
 }
 console.log(`Web server started and running at http://localhost:${portNumber}`);
 console.log("Type stop to shutdown the server: ");

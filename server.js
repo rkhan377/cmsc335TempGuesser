@@ -1,28 +1,6 @@
 let portNumber=8000;
 
 
-process.stdin.setEncoding("utf8");
-if (process.argv.length != 2) {
-  process.stdout.write(`Usage node summerCampServer.js`);
-  process.exit(1);
-}
-console.log(`Web server started and running at http://localhost:${portNumber}`);
-console.log("Type stop to shutdown the server: ");
-process.stdin.on('readable', () => {
-	let dataInput = process.stdin.read();
-	if (dataInput !== null) {
-		let command = dataInput.trim();
-		if (command === "stop") {
-			console.log("Shutting down the server");
-            process.exit(0);
-        } else {
-			console.log(`Invalid command: ${command}`);
-		}
-        process.stdin.resume();
-        console.log("Type stop to shutdown the server: ");
-    }
-});
-
 const path = require("path");
 const express = require("express"); /* Accessing express module */
 const app = express();

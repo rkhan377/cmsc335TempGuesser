@@ -1,6 +1,13 @@
 let portNumber=8000;
 
 
+process.stdin.setEncoding("utf8");
+if (process.argv.length != 2) {
+  process.stdout.write(`Usage node summerCampServer.js`);
+  process.exit(1);
+}
+
+
 const path = require("path");
 const express = require("express"); /* Accessing express module */
 const app = express();
